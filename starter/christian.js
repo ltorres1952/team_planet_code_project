@@ -25,7 +25,6 @@ function showUserFactors(planetType, factorType, factorUnit) {
 
     const factors = {};
     let measurement;
-    let planetType = ();
 
     switch (planetType) {
         case "earth":
