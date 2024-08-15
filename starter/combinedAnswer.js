@@ -18,23 +18,31 @@ function calculateValue(planetType, factorType, factorUnit) {
             }
             break;
     }
-   
+
     switch (factorType) {
         case 'jump':
             measurement = 'cm';
             for (let planet in planetGravity) {
-        factors[planet] = parseFloat((factorUnit / planetGravity[planet]).toFixed(2));
-    }
+                factors[planet] = parseFloat((factorUnit / planetGravity[planet]).toFixed(2));
+            }
             break;
         case 'weight':
             measurement = 'kg';
             for (let planet in planetGravity) {
-        factors[planet] = parseFloat((factorUnit * planetGravity[planet]).toFixed(2));
-    }
+                factors[planet] = parseFloat((factorUnit * planetGravity[planet]).toFixed(2));
+            }
             break;
         default:
             measurement = 'units';
             break;
+    }
+    while (true) {
+        if(factorType = "jump"||"weight" ) {
+			break;
+		}
+		else{
+			console.error("you are :0")
+		}
     }
     for (let planet in factors) {
         console.log(`Your ${factorType} on ${planet} is: ${factors[planet]}${measurement}`);
