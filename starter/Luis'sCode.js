@@ -3,7 +3,7 @@ const prompt = require("./prompt-sync")();
 // Import the gravityFactors module which contains factors for different planets
 const gravityFactors = require("./gravityFactors");
 // Define a function to show user factors based on input type and value
-function calculateValue(input) {
+function calculateValue(unit, value) {
     // Initialize an object to hold the results
     let results = {};
     // Declare a variable to hold the unit of measurement
@@ -30,7 +30,10 @@ function userInput() {
     const userUnit = prompt(">");
     conole.log(`Enter value of ${userUnit}`);
     const userValue = prompt(">");
+    calculateValue(userUnit, userValue);
 }
+global.userInput = userInput;
+
 // Define a function to get user inputs for factor type and value
     // Prompt the user to enter the type of factor they want to calculate
     // Prompt the user to enter the numerical value of the factor
