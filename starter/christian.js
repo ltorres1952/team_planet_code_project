@@ -16,8 +16,60 @@
 // Call the showUserFactors function with the user inputs and the gravity factors
 // Expose getUserFactors globally'
 
+// 
+const prompt = require("prompt-sync")();
+const gravityFactors = require("./utils/earthGravityFactors.js");
+const alienGravityFactors = require("./utils/alienGravityFactors.js");
+
+function showUserFactors(planetType, factorType, factorUnit) {
+
+    const factors = {};
+    let measurement;
+    let planetType = ();
+
+    switch (planetType) {
+        case "earth":
+            planetType = gravityFactors;
+            break;
+        case "alien":
+            planetType = alienGravityFactors;
+            break;
+        default:
+
+    }
+
+    for (let planet in planetType) {
+        factors[planet] = parseFloat((factorUnit * planetType[planet]).toFixed(2));
+
+    }
+
+    switch (factorType) {
+        case "jump":
+            measurement = "cm"
+
+            break;
+        case "weight":
+            measurement = "kg"
+            break;
+        case "aura":
+            measurement = "aura"
+            break;
+        default:
+            measurement = "units";
+    }
+    for (planet in factors) {
+        console.log(`your ${factorType} on ${planet} is: ${factors[planet]} ${measurement}`)
+    }
+
+};
+
 function getUserInput() {
-    console.log(`what are you measuring?`);
-    const userType = prompt(">");
-    consoel.log(`your `)
+    console.log(`what are you measuring? Enter: jump, weight and aura`);
+    const factorType = prompt(">");
+    console.log(`Enter the value of your ${factorType} on earth`);
+    const userValue = prompt(">");
+    showUserFactors(factorType, userValue)
+
 }
+global.getUserIput = getUserInput;
+global.showUserFactors = showUserFactors;

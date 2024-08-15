@@ -11,7 +11,11 @@ const repl = require('repl');
 const fs = require('fs');
 const path = require('path');
 
+<<<<<<< HEAD
 const scripts = ['./index.js', './combinedAnswer.js'];
+=======
+const scripts = ['./index.js', './christian.js'];
+>>>>>>> 4b2235412222e0db84d5e83a4d339288cf25ba02
 
 const loadFunctions = () => {
     scripts.forEach(script => {
