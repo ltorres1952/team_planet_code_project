@@ -70,7 +70,7 @@ function userInput() {
     // console.log(`Enter value of ${userUnit}`);
     // let userMeasurement = prompt(">");
     let isMatch;
-    console.log("What do you want to measure('weight' or 'jump'): ");
+    console.log("What do you want to measure('weight' or 'jump' or 'pushups'): ");
     let userUnit = prompt(">");
     // while (true) {
     //     let userUnit = prompt(">");
